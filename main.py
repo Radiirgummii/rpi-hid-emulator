@@ -22,22 +22,6 @@ def hid_encoder(key, modifier=[]):
         mod + 4
     if "gui" in modifier:
         mod + 8
-    if key == "/":
-        if not "shift" in modifier:
-            mod + 1
-        key = "7"
-    if key == ":":
-        if not "shift" in modifier:
-            mod + 1
-        key = "."
-    if key == "?":
-        if not "shift" in modifier:
-            mod + 1
-        key = "ß"
-    if key == "=":
-        if not "shift" in modifier:
-            mod + 1
-        key = "0"
     logging.debug(f"encoding key: {key} as {repr(keys[key])}")
     write_report(chr(mod) + chr(0) + chr(keys[key]) + chr(0) * 5)
     write_report(chr(0)*8)
@@ -45,13 +29,25 @@ def hid_encoder(key, modifier=[]):
 
 def text_encode(text):
     for i in text:
-        hid_encoder(i)
+        if key == "/":
+            mod = ["shift"]
+            i = "7"
+        if key == ":":
+            mod = ["shift"]
+            i = "."
+        if key == "?":
+            mod = ["shift"]
+            i = "ß"
+        if key == "=":
+            mod = ["shift"]
+            i = "0"
+        hid_encoder(i, mod)
 
 
 write_report(chr(8) + chr(0) + chr(21) + chr(0) * 5)
 hid_encoder("r", ["gui"])
 sleep(.5)
-text_encode("microsoftedge:https://www.youtube.com/watch?v=dQw4w9WgXcQ!")
+text_encode("microsoft-edge:https://www.youtube.com/watch?v=dQw4w9WgXcQ!")
 
 '''
 while True:
