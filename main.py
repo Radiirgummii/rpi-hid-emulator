@@ -51,10 +51,7 @@ def text_encode(text):
 write_report(chr(8) + chr(0) + chr(21) + chr(0) * 5)
 hid_encoder("r", ["gui"])
 sleep(.5)
-logging.debug("w")
-text_encode("microsoftedge.exe!")
-sleep(1)
-text_encode("https://www.youtube.com/watch?v=dQw4w9WgXcQ!")
+text_encode("microsoftedge:https://www.youtube.com/watch?v=dQw4w9WgXcQ!")
 
 '''
 while True:
