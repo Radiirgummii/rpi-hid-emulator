@@ -29,6 +29,7 @@ def hid_encoder(key, modifier=[]):
 
 def text_encode(text):
     for i in text:
+        mod = []
         if i == "/":
             mod = ["shift"]
             i = "7"
