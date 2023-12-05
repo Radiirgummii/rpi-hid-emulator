@@ -62,9 +62,6 @@ def text_encode(text):
     for i in text:
         hid_encoder(i)
 
-def text_encode(text):
-    for i in text:
-        hid_encoder(i)
 
 write_report(chr(8) + chr(0) + chr(21) + chr(0) * 5)
 hid_encoder("r", ["gui"])
