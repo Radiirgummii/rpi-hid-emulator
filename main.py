@@ -29,16 +29,16 @@ def hid_encoder(key, modifier=[]):
 
 def text_encode(text):
     for i in text:
-        if key == "/":
+        if i == "/":
             mod = ["shift"]
             i = "7"
-        if key == ":":
+        if i == ":":
             mod = ["shift"]
             i = "."
-        if key == "?":
+        if i == "?":
             mod = ["shift"]
             i = "ß"
-        if key == "=":
+        if i == "=":
             mod = ["shift"]
             i = "0"
         hid_encoder(i, mod)
