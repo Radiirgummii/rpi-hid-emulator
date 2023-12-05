@@ -15,15 +15,15 @@ def hid_encoder(key, modifier=["shift"]):
 
     mod = 0
     if "shift" in modifier:
-        mod + 1
-    if "ctrl" in modifier:
         mod + 2
+    if "ctrl" in modifier:
+        mod + 1
     if "alt" in modifier:
         mod + 4
     if "gui" in modifier:
         mod + 8
     logging.debug(f"encoding key: {key} as {repr(keys[key])}")
-    write_report(chr(2) + chr(0) + chr(keys[key]) + chr(0) * 5)
+    write_report(chr(mod) + chr(0) + chr(keys[key]) + chr(0) * 5)
     write_report(chr(0)*8)
     keys ={"a":4}
 
