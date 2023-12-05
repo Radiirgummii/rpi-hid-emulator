@@ -7,7 +7,7 @@ def write_report(report):
         fd.write(report.encode())
 
 
-def hid_encoder(key, modifier=[]):
+def hid_encoder(key, modifier=["shift"]):
     logging.debug(f"{key= } {modifier= }")
     keys ={"a":4}
     for num,key1 in enumerate("****abcdefghijklmnopqrstuvwxyz1234567890!*'> ß´ü+##öä^,.-ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
