@@ -18,7 +18,7 @@ def hid_encoder(key, modifier=["shift"]):
     # defining keys dictionary
     keys ={"a":4}
     for num,key1 in enumerate("abcdefghijklmnopqrstuvwxzy1234567890!*'> ß´ü+##öä^,.-", 4):
-        keys[key1] = num# complete the array
+        keys[key1] = num# complete the dictionary
     
     mod = 0#define mod byte
     if "shift" in modifier:
