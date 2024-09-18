@@ -54,7 +54,7 @@ navigate into the repo:
 
 `cd rpi-hid-emulator`
 
-now you can try out the exaple script(the script is designed for a windows PC):
+now you can try out the exaple script(the script is designed for a Windows PC, and a German keyboard):
 
 `sudo python example.py`
 
